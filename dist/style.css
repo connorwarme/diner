@@ -1,0 +1,29 @@
+.headerContainer {
+    height: 20vh;
+    width: 100vw;
+    background-color: lightseagreen;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+.titleContainer {
+    grid-row: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuContainer {
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.home {
+    grid-column: 2/3;
+}
+.menu {
+    grid-column: 3/4;
+}
+.contact {
+    grid-column: 4/5;
+}
