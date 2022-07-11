@@ -1,1 +1,1 @@
-console.log("fire in the hole");
+console.log("fire in the hole"),document.body.appendChild((()=>{const e=document.createElement("div");e.classList.add("headerContainer");const t=document.createElement("div");t.classList.add("titleContainer");const n=document.createElement("h1");return n.classList.add("title"),n.textContent="Dirtbag Diner",e.appendChild(t),t.appendChild(n),e})());
