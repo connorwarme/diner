@@ -1,4 +1,5 @@
-console.log('fire in the hole');
+import Photo from './img/photo.jpg';
+import Icon from './img/background.jpg';
 
 const header = () => {
     const headerContainer = document.createElement('div');
@@ -12,20 +13,69 @@ const header = () => {
     menuContainer.classList.add('menuContainer');
     const home = document.createElement('div');
     home.classList.add('home');
-    home.textContent = "HOME";
+    const homebtn = document.createElement('button');
+    homebtn.classList.add('homebtn');
+    homebtn.setAttribute('id', 'homebtn');
+    const homeLabel = document.createElement('label');
+    homeLabel.setAttribute('for', 'homebtn');
+    homeLabel.textContent = "HOME";
     const menu = document.createElement('div');
     menu.classList.add('menu');
-    menu.textContent = "MENU";
+    const menubtn = document.createElement('button');
+    menubtn.classList.add('menubtn');
+    menubtn.setAttribute('id', 'menubtn');
+    const menuLabel = document.createElement('label');
+    menuLabel.setAttribute('for', 'menubtn');
+    menuLabel.textContent = "MENU";
     const contact = document.createElement('div');
     contact.classList.add('contact');
-    contact.textContent = "CONTACT US";
+    const contactbtn = document.createElement('button');
+    contactbtn.classList.add('contactbtn');
+    contactbtn.setAttribute('id', 'contactbtn');
+    const contactLabel = document.createElement('label');
+    contactLabel.setAttribute('for', 'contactbtn');
+    contactLabel.textContent = "CONTACT US";
     headerContainer.appendChild(titleContainer);
     titleContainer.appendChild(title);
     headerContainer.appendChild(menuContainer);
     menuContainer.appendChild(home);
     menuContainer.appendChild(menu);
     menuContainer.appendChild(contact);
+    home.appendChild(homebtn);
+    homebtn.appendChild(homeLabel);
+    menu.appendChild(menubtn);
+    menubtn.appendChild(menuLabel);
+    contact.appendChild(contactbtn);
+    contactbtn.appendChild(contactLabel);
     return headerContainer;
 }
 const content = document.querySelector('div#content');
+const background = new Image();
+background.src = Icon;
+background.alt = "Connor on The Path";
+content.style.background = `no-repeat center / 100% url(${background.src})`;
 content.appendChild(header());
+// body: main image, fun title
+const body = () => {
+    const bodyContainer = document.createElement('div');
+    bodyContainer.classList.add('bodyContainer');
+    const body = document.createElement('div');
+    body.classList.add('body');
+    const h2 = document.createElement('h2');
+    h2.textContent = "Taking Delicious to a Whole New Level";
+    const innerContainer = document.createElement('div');
+    innerContainer.classList.add('innerContainer');
+    const photo = new Image();
+    photo.src = Photo;
+    photo.alt = "Amity cooking in the van";
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('textContainer');
+    textContainer.textContent = "est. February 2017";
+    bodyContainer.appendChild(body);
+    body.appendChild(h2);
+    body.appendChild(innerContainer);
+    body.appendChild(textContainer);
+    innerContainer.appendChild(photo);
+    return bodyContainer;
+}
+content.appendChild(body());
