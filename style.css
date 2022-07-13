@@ -60,8 +60,10 @@
 .contact {
     grid-column: 5/6;
 }
-.bodyContainer {
+.bodyWrapper {
     grid-row: 3/11;
+}
+.bodyContainer {
     margin: 10vh 0 0 0;
     width: inherit;
     height: 500px;
