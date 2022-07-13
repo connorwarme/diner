@@ -1,0 +1,94 @@
+import Icon from './img/background.jpg';
+import Git from './img/github.svg';
+import Linked from './img/linked.svg';
+
+// main page setup: header, body, footer
+const header = () => {
+    const headerContainer = document.createElement('div');
+    headerContainer.classList.add('headerContainer');
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('titleContainer');
+    const title = document.createElement('h1');
+    title.classList.add('title');
+    title.textContent = "Dirtbag Diner";
+    const menuContainer = document.createElement('div');
+    menuContainer.classList.add('menuContainer');
+    const home = document.createElement('div');
+    home.classList.add('home');
+    const homebtn = document.createElement('button');
+    homebtn.classList.add('homebtn');
+    homebtn.setAttribute('id', 'homebtn');
+    const homeLabel = document.createElement('label');
+    homeLabel.setAttribute('for', 'homebtn');
+    homeLabel.textContent = "HOME";
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+    const menubtn = document.createElement('button');
+    menubtn.classList.add('menubtn');
+    menubtn.setAttribute('id', 'menubtn');
+    const menuLabel = document.createElement('label');
+    menuLabel.setAttribute('for', 'menubtn');
+    menuLabel.textContent = "MENU";
+    const contact = document.createElement('div');
+    contact.classList.add('contact');
+    const contactbtn = document.createElement('button');
+    contactbtn.classList.add('contactbtn');
+    contactbtn.setAttribute('id', 'contactbtn');
+    const contactLabel = document.createElement('label');
+    contactLabel.setAttribute('for', 'contactbtn');
+    contactLabel.textContent = "CONTACT US";
+    headerContainer.appendChild(titleContainer);
+    titleContainer.appendChild(title);
+    headerContainer.appendChild(menuContainer);
+    menuContainer.appendChild(home);
+    menuContainer.appendChild(menu);
+    menuContainer.appendChild(contact);
+    home.appendChild(homebtn);
+    homebtn.appendChild(homeLabel);
+    menu.appendChild(menubtn);
+    menubtn.appendChild(menuLabel);
+    contact.appendChild(contactbtn);
+    contactbtn.appendChild(contactLabel);
+    return headerContainer;
+}
+const body = (input) => {
+    const bodyWrapper = document.createElement('div');
+    bodyWrapper.classList.add('bodyWrapper');
+    const background = new Image();
+    background.src = Icon;
+    background.alt = "Connor on The Path";
+    input.style.background = `no-repeat center / 100% url(${background.src})`;
+    return bodyWrapper;
+}
+const footer = () => {
+    const footerContainer = document.createElement('div');
+    footerContainer.classList.add('footerContainer');
+    const footer = document.createElement('div');
+    footer.classList.add('footer');
+    const linkContainer = document.createElement('div');
+    linkContainer.classList.add('linkContainer');
+    const gitLink = document.createElement('a');
+    gitLink.setAttribute('href', 'https://github.com/connorwarme');
+    gitLink.setAttribute('alt', 'GitHub profile link');
+    const linkLink = document.createElement('a');
+    linkLink.setAttribute('href', 'https://www.linkedin.com/in/connor-warme-103a09167');
+    linkLink.setAttribute('alt', 'LinkedIn profile link');
+    const github = new Image();
+    github.src = Git;
+    github.alt = "GitHub link";
+    const linked = new Image();
+    linked.src = Linked;
+    linked.alt = "Linked In profile";
+    const box = document.createElement('div');
+    box.classList.add('box');
+    box.textContent = "Peregrinning Productions";
+    footerContainer.appendChild(footer);
+    footer.appendChild(linkContainer);
+    linkContainer.appendChild(gitLink);
+    linkContainer.appendChild(linkLink);
+    gitLink.appendChild(github);
+    linkLink.appendChild(linked);
+    footer.appendChild(box);
+    return footerContainer;
+}
+export { header, body, footer };

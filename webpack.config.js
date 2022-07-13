@@ -2,7 +2,13 @@ const path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        body: './src/body.js',
+        home: './src/home.js',
+        menu: './src/menu.js',
+        contact: './src/contact.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
